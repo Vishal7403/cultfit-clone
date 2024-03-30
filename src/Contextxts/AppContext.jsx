@@ -17,7 +17,7 @@ export const AppContextProvider = ({ children }) => {
 
   const getDataById = async (id) => {
     const res = await fetch(
-      `https://secure-plateau-49386.herokuapp.com/users/me/${id}`
+      `http://localhost:5000/users/me/${id}`
     );
     // console.log(res);
     const user = await res.json();
@@ -29,7 +29,7 @@ export const AppContextProvider = ({ children }) => {
     const { tokenId } = googleUser;
 
     const res = await fetch(
-      "https://secure-plateau-49386.herokuapp.com/users/api/v2/auth/google",
+      "http://localhost:5000/users/api/v2/auth/google",
       {
         method: "POST",
         body: JSON.stringify({
